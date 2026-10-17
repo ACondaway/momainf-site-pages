@@ -28,6 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="feature-motion.css">
   <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
@@ -123,29 +124,27 @@
     </section>
 
 
-    <!-- Overview -->
-    <section class="infra-overview" id="overview" aria-labelledby="overview-title">
-      <div class="container">
-        <div class="infra-overview-shell glass reveal">
-          <div class="infra-overview-copy">
-            <p class="kicker"><span lang="en">Overview</span><span lang="zh">概览</span></p>
-            <h2 id="overview-title"><span lang="en">A shared infrastructure for embodied mobile manipulation</span><span lang="zh">面向具身移动操作的跨本体基础设施</span></h2>
-            <p class="lead"><span lang="en">MoMaInf turns human descriptions into structured indoor worlds, reusable data and comparable benchmark episodes. The same contracts carry intent from scene generation through robot execution across embodiments.</span><span lang="zh">MoMaInf 将人类描述转化为结构化室内世界、可复用数据和可比较的 benchmark episode。统一契约把意图从场景生成传递到不同本体的机器人执行。</span></p>
-          </div>
-          <div class="infra-overview-visual" aria-label="MoMaInf infrastructure layers">
-            <div class="infra-orbit orbit-one"></div>
-            <div class="infra-orbit orbit-two"></div>
-            <div class="infra-core"><span>MoMaInf</span><small>scene · data · benchmark</small></div>
-            <div class="infra-pillars">
-              <div class="infra-pillar"><span class="infra-index">01</span><strong><span lang="en">Scenes</span><span lang="zh">场景</span></strong><small><span lang="en">prompt → graph → world</span><span lang="zh">提示词 → 场景图 → 世界</span></small></div>
-              <div class="infra-pillar"><span class="infra-index">02</span><strong><span lang="en">Data</span><span lang="zh">数据</span></strong><small><span lang="en">state · action · view</span><span lang="zh">状态 · 动作 · 视角</span></small></div>
-              <div class="infra-pillar"><span class="infra-index">03</span><strong><span lang="en">Bench</span><span lang="zh">评测</span></strong><small><span lang="en">tasks · outcomes · diagnostics</span><span lang="zh">任务 · 结果 · 诊断</span></small></div>
-            </div>
-          </div>
-          <div class="infra-tags" aria-label="Infrastructure properties">
-            <span class="infra-tag">embodiment-agnostic</span><span class="infra-tag">tool-callable</span><span class="infra-tag">structured by default</span><span class="infra-tag">simulation to benchmark</span>
-          </div>
+    <!-- Scroll-driven infrastructure overview -->
+    <section class="feature-constellation" id="overview" aria-labelledby="overview-title">
+      <h2 id="overview-title" class="feature-sr">MoMaInf — Scenes, data and benchmarks across embodiments</h2>
+      <div class="feature-pin">
+        <div class="feature-board" aria-label="MoMaInf infrastructure overview">
+          <a class="feature-tile" data-feature="assets" data-from-x="-1" data-from-y="-0.55" href="#gallery" aria-label="Embodied scene assets" data-zh-label="具身场景资产" style="--tile-x:0.71770%;--tile-y:1.27524%;--tile-w:28.11005%;--tile-h:26.14240%;--tile-ratio:470/246;"><img src="media/carry.webp" loading="lazy" alt="Robot handling an object in a furnished indoor scene" data-zh-alt="机器人在布置好的室内场景中搬运物体"><span class="feature-shade"></span><span class="feature-label"><span lang="en">Embodied scene assets</span><span lang="zh">具身场景资产</span></span></a>
+          <a class="feature-tile" data-feature="scenes" data-from-x="-0.1" data-from-y="-1" href="#pipeline" aria-label="Scene generation" data-zh-label="场景生成" style="--tile-x:29.30622%;--tile-y:1.27524%;--tile-w:36.00478%;--tile-h:29.22423%;--tile-ratio:602/275;"><img src="media/scene_living.webp" loading="lazy" alt="Generated living room scene" data-zh-alt="生成的客厅场景"><span class="feature-shade"></span><span class="feature-label"><span lang="en">Scene generation</span><span lang="zh">场景生成</span></span></a>
+          <a class="feature-tile" data-feature="graph" data-from-x="0.65" data-from-y="-1" href="#architecture" aria-label="Scene graph and task hints" data-zh-label="场景图与任务提示" style="--tile-x:65.78947%;--tile-y:1.27524%;--tile-w:16.38756%;--tile-h:29.22423%;--tile-ratio:274/275;"><img src="media/overview_path.webp" loading="lazy" alt="Top-down scene overview with a robot path" data-zh-alt="带有机器人路径的场景俯视图"><span class="feature-shade"></span><span class="feature-label"><span lang="en">Scene graph + task hints</span><span lang="zh">场景图与任务提示</span></span></a>
+          <a class="feature-tile" data-feature="planning" data-from-x="1" data-from-y="-0.65" href="#architecture" aria-label="Robot agnostic planning" data-zh-label="本体无关规划" style="--tile-x:82.65550%;--tile-y:1.27524%;--tile-w:16.74641%;--tile-h:29.22423%;--tile-ratio:280/275;"><img src="media/placed.webp" loading="lazy" alt="Robot placing an object in an articulated appliance" data-zh-alt="机器人将物体放入带铰接门的设备中"><span class="feature-shade"></span><span class="feature-label"><span lang="en">Robot-agnostic planning</span><span lang="zh">本体无关规划</span></span></a>
+          <a class="feature-tile" data-feature="episodes" data-from-x="-1" data-from-y="0.05" href="#gallery" aria-label="Multi-view episodes" data-zh-label="多视角 episode" style="--tile-x:0.71770%;--tile-y:28.26780%;--tile-w:28.11005%;--tile-h:39.42614%;--tile-ratio:470/371;"><img src="media/episode_poster.webp" loading="lazy" alt="Multi-camera robot episode in an indoor room" data-zh-alt="室内房间中的多相机机器人 episode"><span class="feature-shade"></span><span class="feature-label"><span lang="en">Multi-view episodes</span><span lang="zh">多视角 episode</span></span></a>
+          <div class="feature-tile feature-brand" data-feature="brand" role="img" aria-label="MoMaInf. Scenes, data and benchmarks across embodiments" data-zh-label="MoMaInf：跨本体的场景、数据与评测" style="--tile-x:29.30622%;--tile-y:31.34963%;--tile-w:41.14833%;--tile-h:36.34431%;--tile-ratio:688/342;"><div class="feature-brand-mark"><span>MoMaInf</span><small>scenes · data · benchmarks</small></div></div>
+          <a class="feature-tile" data-feature="physics" data-from-x="1" data-from-y="0.1" href="#architecture" aria-label="Batched physics" data-zh-label="批量物理" style="--tile-x:70.93301%;--tile-y:31.34963%;--tile-w:28.46890%;--tile-h:36.34431%;--tile-ratio:476/342;"><img src="media/mjwarp_timeline.webp" loading="lazy" alt="MuJoCo Warp timing and utilization plot" data-zh-alt="MuJoCo Warp 时间与利用率图"><span class="feature-shade"></span><span class="feature-label"><span lang="en">Batched physics</span><span lang="zh">批量物理</span></span></a>
+          <a class="feature-tile" data-feature="worlds" data-from-x="-1" data-from-y="0.9" href="#gallery" aria-label="Multi-room worlds" data-zh-label="多房间世界" style="--tile-x:0.71770%;--tile-y:68.65037%;--tile-w:15.55024%;--tile-h:29.75558%;--tile-ratio:260/280;"><img src="media/megacity.webp" loading="lazy" alt="Many generated indoor worlds in a multi-room overview" data-zh-alt="多房间生成室内世界的总览"><span class="feature-shade"></span><span class="feature-label"><span lang="en">Multi-room worlds</span><span lang="zh">多房间世界</span></span></a>
+          <a class="feature-tile" data-feature="collection" data-from-x="-0.6" data-from-y="1" href="#gallery" aria-label="Data 1.0 collection" data-zh-label="Data 1.0 采集" style="--tile-x:16.74641%;--tile-y:68.65037%;--tile-w:21.65072%;--tile-h:29.75558%;--tile-ratio:362/280;"><img src="media/mosaic_poster.webp" loading="lazy" alt="Eight simulated episodes shown together" data-zh-alt="八个仿真 episode 并排展示"><span class="feature-shade"></span><span class="feature-label"><span lang="en">Data 1.0 collection</span><span lang="zh">Data 1.0 采集</span></span></a>
+          <a class="feature-tile" data-feature="diagnostics" data-from-x="0" data-from-y="1" href="#architecture" aria-label="Trajectories and diagnostics" data-zh-label="轨迹与诊断" style="--tile-x:38.87560%;--tile-y:68.65037%;--tile-w:22.48804%;--tile-h:29.75558%;--tile-ratio:376/280;"><img src="media/ghost_trail.webp" loading="lazy" alt="Robot trajectory ghost trail from a recorded episode" data-zh-alt="记录 episode 中的机器人轨迹残影"><span class="feature-shade"></span><span class="feature-label"><span lang="en">Trajectories + diagnostics</span><span lang="zh">轨迹与诊断</span></span></a>
+          <a class="feature-tile" data-feature="adapters" data-from-x="0.6" data-from-y="1" href="#architecture" aria-label="Embodiment adapters" data-zh-label="本体适配器" style="--tile-x:61.84211%;--tile-y:68.65037%;--tile-w:20.33493%;--tile-h:29.75558%;--tile-ratio:340/280;"><img src="media/scene_office.webp" loading="lazy" alt="Generated office scene for embodiment adapters" data-zh-alt="用于本体适配器的生成办公室场景"><span class="feature-shade"></span><span class="feature-label"><span lang="en">Embodiment adapters</span><span lang="zh">本体适配器</span></span></a>
+          <a class="feature-tile" data-feature="benchmark" data-from-x="1" data-from-y="0.9" href="#pipeline" aria-label="Benchmark scenarios" data-zh-label="Benchmark 场景" style="--tile-x:82.65550%;--tile-y:68.65037%;--tile-w:16.74641%;--tile-h:29.75558%;--tile-ratio:280/280;"><img src="media/scene_dining.webp" loading="lazy" alt="Generated dining scene used as a benchmark candidate" data-zh-alt="作为 benchmark 候选的生成餐厅场景"><span class="feature-shade"></span><span class="feature-label"><span lang="en">Benchmark scenarios</span><span lang="zh">Benchmark 场景</span></span></a>
         </div>
+        <div class="feature-scroll-cue" aria-hidden="true"><span><span lang="en">Scroll to bring the infrastructure together</span><span lang="zh">滚动查看完整基础设施</span></span><span class="feature-cue-arrow">↓</span></div>
+        <button class="feature-skip" type="button"><span lang="en">Show all layers</span><span lang="zh">显示全部层</span></button>
+        <p class="feature-art-note"><span lang="en">Real scene, data and simulation artifacts from the MoMaInf gallery</span><span lang="zh">来自 MoMaInf 展示页的真实场景、数据与仿真产物</span></p>
       </div>
     </section>
 
@@ -308,6 +307,7 @@
   </div>
 
   <script src="main.js" defer></script>
+  <script src="feature-motion.js" defer></script>
   <script src="gallery-featured.js"></script>
 </body>
 </html>
