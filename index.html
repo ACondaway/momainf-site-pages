@@ -28,7 +28,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="feature-motion.css">
   <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
@@ -52,10 +51,8 @@
       <nav class="links" aria-label="Sections">
         <a href="#overview">Overview</a>
         <a href="#pipeline"><span lang="en">Pipeline</span><span lang="zh">流程</span></a>
-        <a href="#features"><span lang="en">Capabilities</span><span lang="zh">能力</span></a>
         <a href="#architecture"><span lang="en">Architecture</span><span lang="zh">架构</span></a>
         <a href="#gallery"><span lang="en">Gallery</span><span lang="zh">展示</span></a>
-        <a href="#results"><span lang="en">Results</span><span lang="zh">结果</span></a>
         <a href="#team"><span lang="en">Team</span><span lang="zh">团队</span></a>
       </nav>
       <button class="lang-toggle" type="button" aria-label="Switch language" data-zh-label="切换语言">
@@ -73,7 +70,7 @@
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="container hero-content">
-        <p class="eyebrow">7 robot embodiments · Data 1.0 · cuRobo · MuJoCo / MuJoCo Warp</p>
+        <p class="eyebrow">SCENE GENERATION · DATA GENERATION · BENCHMARKS · CROSS-EMBODIMENT</p>
         <h1 id="hero-title" class="title">MoMaInf</h1>
         <p class="subtitle">
           <span lang="en">Embodied indoor mobile manipulation research: structured scene generation, searchable assets, shared robot interfaces, multi-camera data and benchmark tooling.</span>
@@ -95,200 +92,138 @@
     <section class="stats" id="stats">
       <div class="container stats-grid">
         <div class="stat glass reveal">
-          <div class="stat-value"><span class="count" data-to="7">7</span></div>
+          <div class="stat-value">01</div>
           <p class="stat-label">
-            <span lang="en">robot embodiments share the current Robot / Data interfaces</span>
-            <span lang="zh">款本体共享当前 Robot / Data 接口</span>
+            <span lang="en">structured scene generation from natural language</span>
+            <span lang="zh">从自然语言生成结构化场景</span>
           </p>
         </div>
         <div class="stat glass reveal">
-          <div class="stat-value"><span class="count" data-to="1.0" data-decimals="1">1.0</span></div>
+          <div class="stat-value">02</div>
           <p class="stat-label">
-            <span lang="en">current data contract; LeRobot-v2-inspired, standard loader not yet verified</span>
-            <span lang="zh">当前数据契约；受 LeRobot-v2 启发，标准 loader 尚未验证</span>
+            <span lang="en">shared interfaces for world, robot and data</span>
+            <span lang="zh">连接世界、本体与数据的统一接口</span>
           </p>
         </div>
         <div class="stat glass reveal">
-          <div class="stat-value"><span class="count" data-to="1959">1,959</span></div>
+          <div class="stat-value">03</div>
           <p class="stat-label">
-            <span lang="en">normalized asset records; 430 low-confidence entries remain for review</span>
-            <span lang="zh">条已归一化资产记录；其中 430 条低置信度待复核</span>
+            <span lang="en">large-scale episode and dataset generation</span>
+            <span lang="zh">大规模 episode 与数据生成</span>
           </p>
         </div>
         <div class="stat glass reveal">
-          <div class="stat-value"><span class="count" data-to="1103">1,103</span></div>
+          <div class="stat-value">04</div>
           <p class="stat-label">
-            <span lang="en">frames in the verified G1 full-task regression; not a general success rate</span>
-            <span lang="zh">G1 完整任务回归中核验的帧数；不是泛化成功率</span>
+            <span lang="en">benchmark protocols across embodiments</span>
+            <span lang="zh">跨本体的 benchmark 协议</span>
           </p>
         </div>
       </div>
     </section>
 
 
-    <!-- Scroll-driven feature constellation. Artwork stays English in both site languages. -->
-    <section class="feature-constellation" id="overview" aria-labelledby="overview-title">
-      <h2 id="overview-title" class="feature-sr">MoMaInf — From Scenes to Robot Actions</h2>
-      <div class="feature-pin">
-        <div class="feature-board" aria-label="MoMaInf feature overview">
-          <a class="feature-tile" data-feature="assets" data-from-x="-1" data-from-y="-0.55" href="#features" aria-label="Manipulation-Ready Assets" style="--tile-x:0.71770%;--tile-y:1.27524%;--tile-w:28.11005%;--tile-h:26.14240%;--art-w:355.74468%;--art-h:382.52033%;--art-x:0.99834%;--art-y:1.72662%;--tile-ratio:470/246;"><span class="feature-sr">Manipulation-Ready Assets</span></a>
-          <a class="feature-tile" data-feature="scenes" data-from-x="-0.1" data-from-y="-1" href="#pipeline" aria-label="Agentic Scene Generation" style="--tile-x:29.30622%;--tile-y:1.27524%;--tile-w:36.00478%;--tile-h:29.22423%;--art-w:277.74086%;--art-h:342.18182%;--art-x:45.79439%;--art-y:1.80180%;--tile-ratio:602/275;"><span class="feature-sr">Agentic Scene Generation</span></a>
-          <a class="feature-tile" data-feature="graph" data-from-x="0.65" data-from-y="-1" href="#pipeline" aria-label="Scene Graphs & Task Discovery" style="--tile-x:65.78947%;--tile-y:1.27524%;--tile-w:16.38756%;--tile-h:29.22423%;--art-w:610.21898%;--art-h:342.18182%;--art-x:78.68383%;--art-y:1.80180%;--tile-ratio:274/275;"><span class="feature-sr">Scene Graphs & Task Discovery</span></a>
-          <a class="feature-tile" data-feature="planning" data-from-x="1" data-from-y="-0.65" href="#features" aria-label="Motion Planning" style="--tile-x:82.65550%;--tile-y:1.27524%;--tile-w:16.74641%;--tile-h:29.22423%;--art-w:597.14286%;--art-h:342.18182%;--art-x:99.28161%;--art-y:1.80180%;--tile-ratio:280/275;"><span class="feature-sr">Motion Planning</span></a>
-          <a class="feature-tile" data-feature="bimanual" data-from-x="-1" data-from-y="0.05" href="#gallery" aria-label="Mobile Bimanual Manipulation" style="--tile-x:0.71770%;--tile-y:28.26780%;--tile-w:28.11005%;--tile-h:39.42614%;--art-w:355.74468%;--art-h:253.63881%;--art-x:0.99834%;--art-y:46.66667%;--tile-ratio:470/371;"><span class="feature-sr">Mobile Bimanual Manipulation</span></a>
-          <div class="feature-tile feature-brand" data-feature="brand" role="img" aria-label="MoMaInf. From Scenes to Robot Actions" style="--tile-x:29.30622%;--tile-y:31.34963%;--tile-w:41.14833%;--tile-h:36.34431%;--art-w:243.02326%;--art-h:275.14620%;--art-x:49.79675%;--art-y:49.24875%;--tile-ratio:688/342;"></div>
-          <a class="feature-tile" data-feature="gpu" data-from-x="1" data-from-y="0.1" href="#architecture" aria-label="Parallel GPU Simulation. MuJoCo Warp" style="--tile-x:70.93301%;--tile-y:31.34963%;--tile-w:28.46890%;--tile-h:36.34431%;--art-w:351.26050%;--art-h:275.14620%;--art-x:99.16388%;--art-y:49.24875%;--tile-ratio:476/342;"><span class="feature-sr">Parallel GPU Simulation. MuJoCo Warp</span></a>
-          <a class="feature-tile" data-feature="deformables" data-from-x="-1" data-from-y="0.9" href="#features" aria-label="Deformable Objects" style="--tile-x:0.71770%;--tile-y:68.65037%;--tile-w:15.55024%;--tile-h:29.75558%;--art-w:643.07692%;--art-h:336.07143%;--art-x:0.84986%;--art-y:97.73071%;--tile-ratio:260/280;"><span class="feature-sr">Deformable Objects</span></a>
-          <a class="feature-tile" data-feature="collection" data-from-x="-0.6" data-from-y="1" href="#gallery" aria-label="Multi-View Data Collection" style="--tile-x:16.74641%;--tile-y:68.65037%;--tile-w:21.65072%;--tile-h:29.75558%;--art-w:461.87845%;--art-h:336.07143%;--art-x:21.37405%;--art-y:97.73071%;--tile-ratio:362/280;"><span class="feature-sr">Multi-View Data Collection</span></a>
-          <a class="feature-tile" data-feature="annotation" data-from-x="0" data-from-y="1" href="#features" aria-label="Automatic Scene Annotation" style="--tile-x:38.87560%;--tile-y:68.65037%;--tile-w:22.48804%;--tile-h:29.75558%;--art-w:444.68085%;--art-h:336.07143%;--art-x:50.15432%;--art-y:97.73071%;--tile-ratio:376/280;"><span class="feature-sr">Automatic Scene Annotation</span></a>
-          <a class="feature-tile" data-feature="skills" data-from-x="0.6" data-from-y="1" href="#pipeline" aria-label="Reusable Skills" style="--tile-x:61.84211%;--tile-y:68.65037%;--tile-w:20.33493%;--tile-h:29.75558%;--art-w:491.76471%;--art-h:336.07143%;--art-x:77.62763%;--art-y:97.73071%;--tile-ratio:340/280;"><span class="feature-sr">Reusable Skills</span></a>
-          <a class="feature-tile" data-feature="benchmark" data-from-x="1" data-from-y="0.9" href="#pipeline" aria-label="MoMaInf-Bench. Multi-Level Evaluation, in design" style="--tile-x:82.65550%;--tile-y:68.65037%;--tile-w:16.74641%;--tile-h:29.75558%;--art-w:597.14286%;--art-h:336.07143%;--art-x:99.28161%;--art-y:97.73071%;--tile-ratio:280/280;"><span class="feature-sr">MoMaInf-Bench. Multi-Level Evaluation, in design</span></a>
+    <!-- Overview -->
+    <section class="infra-overview" id="overview" aria-labelledby="overview-title">
+      <div class="container">
+        <div class="infra-overview-shell glass reveal">
+          <div class="infra-overview-copy">
+            <p class="kicker"><span lang="en">Overview</span><span lang="zh">概览</span></p>
+            <h2 id="overview-title"><span lang="en">A shared infrastructure for embodied mobile manipulation</span><span lang="zh">面向具身移动操作的跨本体基础设施</span></h2>
+            <p class="lead"><span lang="en">MoMaInf turns human descriptions into structured indoor worlds, reusable data and comparable benchmark episodes. The same contracts carry intent from scene generation through robot execution across embodiments.</span><span lang="zh">MoMaInf 将人类描述转化为结构化室内世界、可复用数据和可比较的 benchmark episode。统一契约把意图从场景生成传递到不同本体的机器人执行。</span></p>
+          </div>
+          <div class="infra-overview-visual" aria-label="MoMaInf infrastructure layers">
+            <div class="infra-orbit orbit-one"></div>
+            <div class="infra-orbit orbit-two"></div>
+            <div class="infra-core"><span>MoMaInf</span><small>scene · data · benchmark</small></div>
+            <div class="infra-pillars">
+              <div class="infra-pillar"><span class="infra-index">01</span><strong><span lang="en">Scenes</span><span lang="zh">场景</span></strong><small><span lang="en">prompt → graph → world</span><span lang="zh">提示词 → 场景图 → 世界</span></small></div>
+              <div class="infra-pillar"><span class="infra-index">02</span><strong><span lang="en">Data</span><span lang="zh">数据</span></strong><small><span lang="en">state · action · view</span><span lang="zh">状态 · 动作 · 视角</span></small></div>
+              <div class="infra-pillar"><span class="infra-index">03</span><strong><span lang="en">Bench</span><span lang="zh">评测</span></strong><small><span lang="en">tasks · outcomes · diagnostics</span><span lang="zh">任务 · 结果 · 诊断</span></small></div>
+            </div>
+          </div>
+          <div class="infra-tags" aria-label="Infrastructure properties">
+            <span class="infra-tag">embodiment-agnostic</span><span class="infra-tag">tool-callable</span><span class="infra-tag">structured by default</span><span class="infra-tag">simulation to benchmark</span>
+          </div>
         </div>
-        <div class="feature-scroll-cue" aria-hidden="true"><span>Scroll to bring it all together</span><span class="feature-cue-arrow">↓</span></div>
-        <button class="feature-skip" type="button">Show all capabilities</button>
-        <p class="feature-art-note">Illustrated capability overview · Benchmark design in progress</p>
       </div>
     </section>
 
     <!-- Pipeline -->
-    <section class="section" id="pipeline" aria-labelledby="pipeline-title">
+    <section class="section pipeline-section" id="pipeline" aria-labelledby="pipeline-title">
       <div class="container">
         <header class="section-head reveal">
           <p class="kicker"><span lang="en">Pipeline</span><span lang="zh">流程</span></p>
-          <h2 id="pipeline-title"><span lang="en">From a sentence to a dataset</span><span lang="zh">从一句话到一个数据集</span></h2>
-          <p class="lead">
-            <span lang="en">Describe a room, get a structured scene candidate with diagnostics, then run a robot task only when the scene and skill path are separately validated.</span>
-            <span lang="zh">描述一个房间，得到带诊断信息的结构化场景候选；只有场景和技能路径分别通过验证后，才运行机器人任务。</span>
-          </p>
+          <h2 id="pipeline-title"><span lang="en">One continuous path from intent to evaluation</span><span lang="zh">从意图到评测的一条连续路径</span></h2>
+          <p class="lead"><span lang="en">MoMaInf keeps each handoff explicit: a language model proposes structure, tools resolve the world, simulators produce data, and benchmark adapters turn episodes into comparable evidence.</span><span lang="zh">MoMaInf 让每一次交接都可见：语言模型提出结构，工具解析世界，仿真器生成数据，benchmark adapter 将 episode 转化为可比较的证据。</span></p>
         </header>
-        <ol class="pipeline">
-          <li class="step glass reveal">
-            <span class="step-no">01</span>
-            <h3><span lang="en">Scene generation</span><span lang="zh">场景生成</span></h3>
-            <p><span lang="en">Human prompt → structured semantic plan / scene graph (rule-based or configurable LLM), tool-based asset retrieval, constraint layout, settling, docking and validation diagnostics.</span><span lang="zh">人类提示词 → 结构化语义规划 / 场景图（规则或可配置 LLM）、工具化资产检索、约束布局、静置、停靠位与验证诊断。</span></p>
-          </li>
-          <li class="step glass reveal">
-            <span class="step-no">02</span>
-            <h3><span lang="en">Scene graph &amp; task exploration</span><span lang="zh">场景图与任务探索</span></h3>
-            <p><span lang="en">The scene graph yields navigate, relocate, transfer, put-in and shelve candidates; predicates come from privileged simulation state and remain separate from visual observations.</span><span lang="zh">场景图生成 navigate、relocate、transfer、put-in、shelve 候选；谓词来自特权仿真状态，并与视觉观测保持分离。</span></p>
-          </li>
-          <li class="step glass reveal">
-            <span class="step-no">03</span>
-            <h3><span lang="en">Skills</span><span lang="zh">技能</span></h3>
-            <p><span lang="en">Navigation, waist, grasp, carry, place, articulated-door skills, insertion, stance search and gaze; planners are exposed through robot-agnostic contracts. G1 task execution is validated; other embodiments remain in interface / zero-step validation.</span><span lang="zh">导航、腰部、抓取、搬运、放置、铰接门技能、插入、站位搜索与注视；规划器通过本体无关契约暴露。G1 已完成任务执行验证，其它本体仍处于接口 / 零步验证阶段。</span></p>
-          </li>
-          <li class="step glass reveal">
-            <span class="step-no">04</span>
-            <h3><span lang="en">Physics: CPU or GPU</span><span lang="zh">物理：CPU 或 GPU</span></h3>
-            <p><span lang="en">CPU MuJoCo or GPU MuJoCo Warp; the server batches physics while planning, rendering and data processes remain separate.</span><span lang="zh">CPU MuJoCo 或 GPU MuJoCo Warp；物理服务批量推进物理，规划、渲染与数据进程保持分离。</span></p>
-          </li>
-          <li class="step glass reveal">
-            <span class="step-no">05</span>
-            <h3><span lang="en">MoMaInf Data 1.0</span><span lang="zh">MoMaInf Data 1.0</span></h3>
-            <p><span lang="en">cctv, head and wrist videos, G1's 25-D state and 22-D control, skill stages and logs. The format is LeRobot-v2-inspired; a standard loader is not yet verified.</span><span lang="zh">cctv、头部与腕部视频，G1 的 25 维状态与 22 维控制、技能阶段和日志。格式受 LeRobot-v2 启发，标准 loader 尚未验证。</span></p>
-          </li>
-          <li class="step glass reveal">
-            <span class="step-no">06</span>
-            <h3><span lang="en">Benchmarks L1–L6</span><span lang="zh">评测 L1–L6</span></h3>
-            <p><span lang="en">Benchmark tooling is under construction; L1–L6 labels still have separate product and code meanings, with binary outcomes and classified failures planned.</span><span lang="zh">评测工具仍在建设；L1–L6 在产品和代码中仍有不同含义，二值结果与失败分类正在规划。</span></p>
-          </li>
-          <li class="step glass planned reveal">
-            <span class="step-no">07</span>
-            <h3><span lang="en">Training &amp; evaluation</span><span lang="zh">训练与评测</span> <span class="badge"><span lang="en">planned</span><span lang="zh">规划中</span></span></h3>
-            <p><span lang="en">Policies trained on the recorded datasets and evaluated on the benchmark protocol.</span><span lang="zh">用录制的数据训练策略，并按评测协议评估。</span></p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Features -->
-    <section class="section" id="features" aria-labelledby="features-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="kicker"><span lang="en">Capabilities</span><span lang="zh">能力</span></p>
-          <h2 id="features-title"><span lang="en">What runs today</span><span lang="zh">现在能跑的</span></h2>
-        </header>
-        <div class="cards">
-          <article class="card glass reveal">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="7" rx="2"/><path d="M12 9.5v3M6 12.5h12v5H6zM8 17.5v2.5M16 17.5v2.5M4 13l2 1.5M20 13l-2 1.5"/><circle cx="10" cy="6" r=".8"/><circle cx="14" cy="6" r=".8"/></svg></div>
-            <h3><span lang="en">AgiBot Genie G1</span><span lang="zh">智元 Genie G1</span></h3>
-            <p><span lang="en">Differential-drive base, a waist that lifts and pitches, two 7-DoF arms with OmniPicker grippers, head, chest and wrist cameras. Not the Unitree G1.</span><span lang="zh">差速底盘、可升降俯仰的腰部、两条 7 自由度机械臂配 OmniPicker 夹爪，头部、胸部与腕部相机。不是宇树 G1。</span></p>
+        <div class="pipeline-track">
+          <div class="pipeline-line" aria-hidden="true"><span></span><span></span><span></span></div>
+          <article class="pipeline-card glass reveal">
+            <div class="pipeline-stage"><span class="pipeline-no">01</span><span class="pipeline-label">CREATE</span></div>
+            <h3><span lang="en">Human intent → SceneSpec</span><span lang="zh">人类意图 → SceneSpec</span></h3>
+            <p><span lang="en">An LLM/VLM turns a room description into typed rooms, affordances, relations and a placement plan. The output is inspectable before anything is simulated.</span><span lang="zh">LLM/VLM 将房间描述转成带类型的房间、可供性、关系和放置计划；进入仿真前，输出就可以被检查。</span></p>
+            <div class="data-chips"><span>prompt</span><span>SceneSpec</span><span>scene graph</span></div>
           </article>
-          <article class="card glass reveal">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="11" rx="1.5"/><path d="M17 8.5l4-2v13l-4-2M6 9.5h6v5H6z"/><path d="M14.5 10.5v3"/></svg></div>
-            <h3><span lang="en">Bimanual articulated tasks</span><span lang="zh">双臂铰接任务</span></h3>
-            <p><span lang="en">The current G1 microwave regression completed pick, navigation, carry, placement and home: 1,103 frames and four videos were verified. Stance search scores base poses in simulation; the cabinet variant exists but is not validated yet.</span><span lang="zh">当前 G1 微波炉回归完成了抓取、导航、搬运、放置和回 home：已核验 1,103 帧与四路视频。站位搜索在仿真中评估底盘位姿；柜门变体已有，但尚未验证。</span></p>
+          <article class="pipeline-card glass reveal">
+            <div class="pipeline-stage"><span class="pipeline-no">02</span><span class="pipeline-label">RESOLVE</span></div>
+            <h3><span lang="en">Retrieve → compose → validate</span><span lang="zh">检索 → 组装 → 验证</span></h3>
+            <p><span lang="en">AssetCatalog and tool calls find varied, licensed assets; a layout compiler places them, settles physics, adds openings and environment context, then emits diagnostics and a semantic graph.</span><span lang="zh">AssetCatalog 与工具调用检索多样且有来源的资产；布局编译器完成放置、物理静置、门窗与外景，再输出诊断和语义图。</span></p>
+            <div class="data-chips"><span>AssetRef</span><span>relations</span><span>diagnostics</span></div>
           </article>
-          <article class="card glass reveal">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="3" width="7" height="5" rx="1"/><rect x="2.5" y="10" width="7" height="5" rx="1"/><rect x="2.5" y="17" width="7" height="4" rx="1"/><rect x="15" y="8" width="6.5" height="8" rx="1.5"/><path d="M9.5 5.5h3l2.5 5M9.5 12.5h5.5M9.5 19h3l2.5-5"/></svg></div>
-            <h3><span lang="en">Parallel collection on MuJoCo Warp</span><span lang="zh">MuJoCo Warp 并行采集</span></h3>
-            <p><span lang="en">A recorded eight-world Warp run completed 8/8 episodes. It demonstrates the batched physics path, not a general success rate or per-world speedup; planning and rendering use separate processes.</span><span lang="zh">一次记录过的八世界 Warp 运行完成了 8/8 个 episode。它展示的是批量物理路径，不是泛化成功率或单世界加速结论；规划与渲染使用独立进程。</span></p>
+          <article class="pipeline-card glass reveal">
+            <div class="pipeline-stage"><span class="pipeline-no">03</span><span class="pipeline-label">GENERATE</span></div>
+            <h3><span lang="en">World → episodes → Data 1.0</span><span lang="zh">世界 → episode → Data 1.0</span></h3>
+            <p><span lang="en">Robot-agnostic skill requests drive navigation, grasping, carrying and placement. The recorder aligns state, action, cameras, skill stages and failure traces behind one data contract.</span><span lang="zh">本体无关的技能请求驱动导航、抓取、搬运和放置；录制器用同一数据契约对齐状态、动作、相机、技能阶段与失败轨迹。</span></p>
+            <div class="data-chips"><span>Request / Result</span><span>state · action</span><span>multi-view</span></div>
           </article>
-          <article class="card glass reveal">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5l8.5 4.5v10L12 21.5 3.5 17V7z"/><path d="M3.5 7L12 11.5 20.5 7M12 11.5v10"/></svg></div>
-            <h3><span lang="en">1,959 normalized assets</span><span lang="zh">1,959 条归一化资产</span></h3>
-            <p><span lang="en">The semantic catalog and default database share one retrieval path across mesh, MJCF, URDF, SDF and USD sources. The current catalog has 1,951 metadata records and 8 image records; 430 low-confidence entries remain for review.</span><span lang="zh">语义目录与默认数据库共用一条检索路径，支持网格、MJCF、URDF、SDF、USD 来源。当前目录包含 1,951 条元数据记录和 8 条图像记录，另有 430 条低置信度条目待复核。</span></p>
+          <article class="pipeline-card glass reveal">
+            <div class="pipeline-stage"><span class="pipeline-no">04</span><span class="pipeline-label">COMPARE</span></div>
+            <h3><span lang="en">Benchmark adapters</span><span lang="zh">Benchmark 适配层</span></h3>
+            <p><span lang="en">The same episode schema feeds task families, embodiment adapters and diagnostics. Benchmark definitions can evolve without rewriting scene generation or robot-specific controllers.</span><span lang="zh">同一 episode schema 接入任务族、本体适配器和诊断器；benchmark 定义可以演进，而不必重写场景生成或本体控制器。</span></p>
+            <div class="data-chips"><span>task family</span><span>outcome</span><span>failure taxonomy</span></div>
           </article>
-          <article class="card glass reveal">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 15c2.5 0 3-6 5.5-6s3 8 5.5 8 3-10 5.5-10c1.2 0 2 1 2.5 2"/><circle cx="2.5" cy="15" r="1"/><circle cx="21.5" cy="9" r="1"/></svg></div>
-            <h3><span lang="en">Deformables</span><span lang="zh">柔性物体</span></h3>
-            <p><span lang="en">Rope objects built with MuJoCo's elasticity plugin and a rope-lift task with a physical pinch and lift, with privileged centreline data per frame. Material parameters are not calibrated yet.</span><span lang="zh">用 MuJoCo 弹性插件构建的绳索物体，以及物理夹持、提起的提绳任务，逐帧记录特权中心线数据。材料参数尚未标定。</span></p>
-          </article>
-          <article class="card glass reveal">
-            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><rect x="13" y="12" width="6" height="4.5" rx=".8"/><path d="M5.5 9h5M5.5 12h4"/></svg></div>
-            <h3><span lang="en">Recording &amp; datasets</span><span lang="zh">录制与数据集</span></h3>
-            <p><span lang="en">Every episode can carry head, wrist and cctv videos, a live skill panel, a ghost-trail image, timing logs and the MoMaInf Data 1.0 record. It is LeRobot-v2-inspired, not yet verified with the standard loader.</span><span lang="zh">每个 episode 可包含头部、腕部与 cctv 视频、实时技能面板、残影图、带耗时日志和 MoMaInf Data 1.0 记录。格式受 LeRobot-v2 启发，尚未用标准 loader 验证。</span></p>
-          </article>
+        </div>
+        <div class="pipeline-footer reveal">
+          <span class="pipeline-footer-dot"></span>
+          <span lang="en">Every stage leaves a structured artifact that can be reviewed, replayed or passed to the next tool.</span>
+          <span lang="zh">每一阶段都留下结构化产物，可供复核、重放或传给下一个工具。</span>
         </div>
       </div>
     </section>
 
     <!-- Architecture -->
-    <section class="section" id="architecture" aria-labelledby="arch-title">
+    <section class="section architecture-section" id="architecture" aria-labelledby="arch-title">
       <div class="container">
         <header class="section-head reveal">
           <p class="kicker"><span lang="en">Architecture</span><span lang="zh">架构</span></p>
-          <h2 id="arch-title"><span lang="en">Batched physics, separate workers</span><span lang="zh">批量物理，独立工作进程</span></h2>
+          <h2 id="arch-title"><span lang="en">Contracts make worlds and bodies interchangeable</span><span lang="zh">统一契约让世界与本体可以互换</span></h2>
+          <p class="lead"><span lang="en">The architecture separates semantic intent, physical state and embodiment details. Each boundary has a readable request, a typed result and a place to attach evidence.</span><span lang="zh">架构把语义意图、物理状态和本体细节分开。每个边界都有可读的 request、类型化 result，以及挂载证据的位置。</span></p>
         </header>
-        <div class="arch glass reveal" role="img" aria-label="Recorded multi-world processes send physics state through pipes to one MuJoCo Warp batching server" data-zh-label="记录中的多世界进程通过管道把物理状态发给一个 MuJoCo Warp 批量物理服务进程">
-          <div class="arch-col">
-            <p class="arch-label"><span lang="en">recorded world processes · worker GPUs</span><span lang="zh">记录中的世界进程 · 工作 GPU</span></p>
-            <div class="worlds">
-              <div class="world">W0</div><div class="world">W1</div><div class="world">W2</div><div class="world">W3</div>
-              <div class="world">W4</div><div class="world">W5</div><div class="world">W6</div><div class="world">W7</div>
-            </div>
-            <ul class="chips">
-              <li><span lang="en">own Python interpreter</span><span lang="zh">独立的 Python 解释器</span></li>
-              <li><span lang="en">cuRobo with CUDA graphs</span><span lang="zh">启用 CUDA 图的 cuRobo</span></li>
-              <li><span lang="en">EGL renderer</span><span lang="zh">EGL 渲染器</span></li>
-              <li><span lang="en">skills &amp; recording</span><span lang="zh">技能与录制</span></li>
-            </ul>
+        <div class="interface-map glass reveal">
+          <div class="interface-lane-label"><span lang="en">Shared interfaces</span><span lang="zh">统一接口</span></div>
+          <div class="interface-lane">
+            <div class="interface-node node-scene"><span class="interface-kicker">INPUT</span><strong>SceneSpec</strong><code>rooms · prompt · goals</code></div>
+            <div class="interface-arrow" aria-hidden="true">→</div>
+            <div class="interface-node node-graph"><span class="interface-kicker">WORLD</span><strong>SceneGraph</strong><code>entities · predicates · AssetRef</code></div>
+            <div class="interface-arrow" aria-hidden="true">→</div>
+            <div class="interface-node node-plan"><span class="interface-kicker">PLAN</span><strong>Request / Result</strong><code>navigate · grasp · place</code></div>
+            <div class="interface-arrow" aria-hidden="true">→</div>
+            <div class="interface-node node-data"><span class="interface-kicker">EVIDENCE</span><strong>Data 1.0</strong><code>state · action · view · trace</code></div>
           </div>
-          <div class="arch-link" aria-hidden="true">
-            <div class="pipe"><i></i><i></i><i></i></div>
-            <p class="pipe-label"><span lang="en">physics state<br>≈ 1 KB per step</span><span lang="zh">物理状态<br>每步约 1 KB</span></p>
-            <div class="pipe reverse"><i></i><i></i><i></i></div>
-          </div>
-          <div class="arch-col">
-            <p class="arch-label"><span lang="en">1 physics server · dedicated GPU</span><span lang="zh">1 个物理服务进程 · 独立 GPU</span></p>
-            <div class="server">
-              <strong>MuJoCo Warp</strong>
-              <span lang="en">single-threaded; batches the worlds waiting at that moment into one CUDA-graph step</span>
-              <span lang="zh">单线程；把当时正在等待的世界合并成一次 CUDA 图步进</span>
-              <span class="mem">0.6 GiB</span>
-            </div>
+          <div class="interface-spine" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="interface-lane-label"><span lang="en">Adapters behind the boundary</span><span lang="zh">边界之后的适配器</span></div>
+          <div class="adapter-row">
+            <div class="adapter-card"><span class="adapter-glyph">R</span><div><strong><span lang="en">Robot contract</span><span lang="zh">本体契约</span></strong><p><code>RobotSpec</code> → planner / navigator / executor factory</p></div></div>
+            <div class="adapter-card"><span class="adapter-glyph">S</span><div><strong><span lang="en">Scene contract</span><span lang="zh">场景契约</span></strong><p><code>SceneSpec</code> → graph → semantic + privileged predicates</p></div></div>
+            <div class="adapter-card"><span class="adapter-glyph">D</span><div><strong><span lang="en">Data contract</span><span lang="zh">数据契约</span></strong><p><code>Data 1.0</code> → videos / state / control / diagnostics</p></div></div>
+            <div class="adapter-card"><span class="adapter-glyph">B</span><div><strong><span lang="en">Backend boundary</span><span lang="zh">后端边界</span></strong><p><code>PhysicsRequest</code> → CPU MuJoCo or MuJoCo Warp</p></div></div>
           </div>
         </div>
-        <div class="arch-text">
-          <div class="reveal">
-            <p><span lang="en">Each world keeps its own interpreter, planner, renderer and recorder. Physics state crosses a small pipe to a batching server, while planning, rendering and data processing remain separate workers.</span><span lang="zh">每个世界保留独立的解释器、规划器、渲染器和录制器。物理状态通过小型管道送到批量服务进程，规划、渲染和数据处理仍是独立工作进程。</span></p>
-            <p><span lang="en">The diagram is a recorded eight-world configuration, not a fixed hardware requirement. GPU placement, memory and process counts are run-specific.</span><span lang="zh">图中是一次记录过的八世界配置，不是固定的硬件要求；GPU 分配、显存和进程数量取决于具体运行。</span></p>
-            <p><span lang="en">That experiment completed 8/8 episodes, but it was CPU-bound and did not establish a general per-world speedup. MuJoCo Warp is a batched physics backend, not a claim that the whole pipeline runs on one GPU.</span><span lang="zh">该实验完成了 8/8 个 episode，但受 CPU 限制，不能据此得出单世界普遍加速结论。MuJoCo Warp 是批量物理后端，不意味着整条流水线都运行在一块 GPU 上。</span></p>
-          </div>
-          <figure class="figure glass reveal">
-            <img src="media/mjwarp_timeline.webp" loading="lazy" width="1280" height="820" alt="Simulated time of each of the 8 worlds against wall time, with GPU memory and utilisation below" data-zh-alt="8 个世界各自的仿真时间随墙钟时间的变化，下方为 GPU 显存与利用率">
-            <figcaption><span lang="en">The 8-world run of 2026-10-10: simulated time per world against wall time (top), GPU memory and utilisation (bottom).</span><span lang="zh">2026-10-10 的 8 世界运行：各世界仿真时间随墙钟时间的变化（上），GPU 显存与利用率（下）。</span></figcaption>
-          </figure>
+        <div class="architecture-notes">
+          <article class="contract-card glass reveal"><span class="contract-number">01</span><h3><span lang="en">Semantic layer</span><span lang="zh">语义层</span></h3><p><span lang="en">A scene is a graph of named entities and relations, not a pile of mesh paths. This is where human language, asset search and task hints meet.</span><span lang="zh">场景是带名称的实体与关系图，而不是一堆网格路径；人类语言、资产检索和任务提示在这里汇合。</span></p></article>
+          <article class="contract-card glass reveal"><span class="contract-number">02</span><h3><span lang="en">Execution layer</span><span lang="zh">执行层</span></h3><p><span lang="en">A skill consumes a typed request and returns a traceable result. The embodiment adapter owns kinematics and controllers; the task language stays portable.</span><span lang="zh">技能消费类型化 request 并返回可追踪 result；本体适配器负责运动学和控制器，任务语言保持可移植。</span></p></article>
+          <article class="contract-card glass reveal"><span class="contract-number">03</span><h3><span lang="en">Evidence layer</span><span lang="zh">证据层</span></h3><p><span lang="en">Every generated world and episode keeps provenance, diagnostics and failure categories so data can be audited before it enters a benchmark.</span><span lang="zh">每个生成世界和 episode 都保留来源、诊断与失败类别，数据进入 benchmark 前可以被审计。</span></p></article>
         </div>
       </div>
     </section>
@@ -347,65 +282,6 @@
       </div>
     </section>
 
-    <!-- Results -->
-    <section class="section" id="results" aria-labelledby="results-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="kicker"><span lang="en">Results</span><span lang="zh">结果</span></p>
-          <h2 id="results-title"><span lang="en">Validated runs</span><span lang="zh">已验证的运行</span></h2>
-          <p class="lead">
-            <span lang="en">The latest validated G1 regression completed the bimanual microwave task: navigation, pick, carry, placement and home. Success still requires the bottle inside <em>and</em> no stability failure (base tilt above 5° for 0.2 s, or 15° and more).</span>
-            <span lang="zh">最新核验的 G1 回归完成了双臂微波炉任务：导航、抓取、搬运、放置和回 home。成功仍要求瓶子在微波炉内，<em>并且</em>稳定性监测无失败（底盘倾斜超过 5° 持续 0.2 s，或达到 15° 及以上）。</span>
-          </p>
-        </header>
-        <div class="table-wrap glass reveal">
-          <table>
-            <thead>
-              <tr>
-                <th scope="col"><span lang="en">Run</span><span lang="zh">运行</span></th>
-                <th scope="col"><span lang="en">Physics</span><span lang="zh">物理</span></th>
-                <th scope="col"><span lang="en">Seeds</span><span lang="zh">种子</span></th>
-                <th scope="col"><span lang="en">Result</span><span lang="zh">结果</span></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span lang="en">Latest G1 full-task regression, 2026-10-14</span><span lang="zh">最新 G1 完整任务回归，2026-10-14</span></td>
-                <td>CPU</td>
-                <td>1</td>
-                <td><span class="ok"><span lang="en">success</span><span lang="zh">成功</span></span> <span lang="en">navigation, grasp, carry, place and home; 1,103 frames, four videos</span><span lang="zh">导航、抓取、搬运、放置和回 home；1,103 帧，四路视频</span></td>
-              </tr>
-              <tr>
-                <td><span lang="en">0.5× microwave, randomized bottle pose and robot start</span><span lang="zh">0.5 倍微波炉，随机化瓶子位姿和机器人起点</span></td>
-                <td>CPU</td>
-                <td>0–15</td>
-                <td><span class="ok">15/16</span> <span lang="en">in one batch; the 16th crashed without a result and succeeded on rerun; max tilt 4.35°</span><span lang="zh">（同一批）；第 16 个崩溃、没有结果，重跑后成功；最大倾斜 4.35°</span></td>
-              </tr>
-              <tr>
-                <td><span lang="en">Furnished microwave room</span><span lang="zh">布置齐全的微波炉房间</span></td>
-                <td><span lang="en">CPU, one process per seed</span><span lang="zh">CPU，每个种子一个进程</span></td>
-                <td>0–7</td>
-                <td><span class="ok">8/8</span></td>
-              </tr>
-              <tr>
-                <td><span lang="en">Furnished microwave room</span><span lang="zh">布置齐全的微波炉房间</span></td>
-                <td><span lang="en">MuJoCo Warp, 8 worlds on one GPU</span><span lang="zh">MuJoCo Warp，8 个世界在一块 GPU 上</span></td>
-                <td>0–7</td>
-                <td><span class="ok">8/8</span></td>
-              </tr>
-              <tr>
-                <td><span lang="en">Single episode, 2026-10-11, furnished room</span><span lang="zh">单个 episode，2026-10-11，布置齐全的房间</span></td>
-                <td>CPU</td>
-                <td>0</td>
-                <td><span class="ok"><span lang="en">success</span><span lang="zh">成功</span></span> <span lang="en">bottle inside, door at 37.7°, max tilt 0.88°, 1,424 frames</span><span lang="zh">瓶子在微波炉内，门开 37.7°，最大倾斜 0.88°，1,424 帧</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="note reveal"><span lang="en">The table mixes dated validation artifacts and is not a unified success rate. Seven-embodiment planning currently has interface and zero-physical-step checks; new embodiments' full grasp, place and home tasks, training and unified evaluation are still unvalidated or planned.</span><span lang="zh">表格混合了不同日期的验证产物，不能当作统一成功率。七款本体的规划目前通过接口和零物理步检查；新本体的完整抓取、放置、回 home 任务，以及训练和统一评测仍未验证或在规划中。</span></p>
-      </div>
-    </section>
-
     <!-- Team -->
     <section class="section" id="team" aria-labelledby="team-title">
       <div class="container team">
@@ -432,7 +308,6 @@
   </div>
 
   <script src="main.js" defer></script>
-  <script src="feature-motion.js" defer></script>
-<script src="gallery-featured.js"></script>
+  <script src="gallery-featured.js"></script>
 </body>
 </html>
