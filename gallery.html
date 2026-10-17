@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scene Gallery · MoMaInf</title>
+  <meta name="description" content="Explore MoMaInf indoor scenes through overviews, room views and detailed captions.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到场景 / Skip to scenes</a>
+  <header class="nav"><div class="nav-inner"><a class="brand" href="./">MoMaInf</a><nav class="links"><a href="./">Home / 首页</a><a href="gallery.html" aria-current="page">Gallery</a></nav><button id="language" class="lang-toggle" type="button">EN / 中文</button></div></header>
+  <main id="main" class="container gallery-main">
+    <p class="kicker">MoMaInf / Scene collection</p>
+    <h1><span lang="zh">室内场景图库</span><span lang="en">Indoor Scene Gallery</span></h1>
+    <p class="gallery-intro"><span lang="zh">当前收录 40 个场景候选，其中 11 个通过当前物理检查；这些是镜头展示与场景生成记录，尚未执行机器人任务。点击场景卡片，查看不同视角、功能分区、资产与诊断说明。</span><span lang="en">This collection contains 40 scene candidates; 11 pass the current physical checks. They document scene generation and camera views, not robot-task execution. Open a card to explore views, functional spaces, assets and diagnostics.</span></p>
+    <div class="gallery-toolbar"><label><span lang="zh">搜索场景</span><span lang="en">Search scenes</span><input id="search" type="search" placeholder="家庭 · office · café"></label><label><span lang="zh">生成方式</span><span lang="en">Collection</span><select id="collection"><option value="all">全部 / All</option><option value="deepseek">DeepSeek</option><option value="external">Agent comparison / Agent 对照</option><option value="archive">Earlier scenes / 早期场景</option></select></label><p id="count" role="status"></p></div>
+    <section id="showcase" hidden><video id="showcase-video" controls playsinline preload="none"></video><p id="showcase-caption"></p></section>
+    <div id="scenes" class="scene-grid" aria-live="polite"></div>
+    <p id="load-error" hidden>场景暂时无法加载，请刷新重试。 / Unable to load scenes. Please refresh.</p>
+  </main>
+  <dialog id="viewer" aria-labelledby="scene-title"><div class="viewer-header"><div><p id="scene-meta" class="kicker"></p><h2 id="scene-title"></h2></div><button id="close" type="button" aria-label="关闭预览 / Close preview">×</button></div><img id="scene-image" alt=""><div class="view-navigation"><button id="previous" type="button" aria-label="上一视角 / Previous view">←</button><p id="view-caption"></p><button id="next" type="button" aria-label="下一视角 / Next view">→</button></div><div id="thumbnails" class="thumbnails"></div><p id="scene-caption"></p><p id="scene-status" class="scene-status"></p><ul id="scene-issues" class="scene-issues"></ul></dialog>
+  <footer class="container gallery-footer"><a href="./">← MoMaInf</a></footer>
+  <script src="gallery.js"></script>
+</body></html>

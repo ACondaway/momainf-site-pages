@@ -1,0 +1,71 @@
+/* The English keynote artwork is one shared texture, independently framed per tile. */
+.feature-sr {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+.feature-constellation {
+  position: relative; height: 310svh; margin-top: 100px;
+  background: #fff; color: #142138; scroll-margin-top: 0;
+}
+.feature-pin {
+  position: sticky; top: 0; height: 100svh; min-height: 440px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; isolation: isolate;
+}
+.feature-board {
+  position: relative;
+  width: min(1600px, calc(100vw - 48px), calc((100svh - 160px) * 1.77683));
+  aspect-ratio: 1672 / 941; flex-shrink: 0;
+}
+.feature-tile {
+  position: absolute; left: var(--tile-x); top: var(--tile-y);
+  width: var(--tile-w); height: var(--tile-h);
+  border-radius: clamp(8px, 1.4vw, 23px); overflow: hidden;
+  background: #edf0f3 url("media/momainf-bento-en-v1.png") var(--art-x) var(--art-y) / var(--art-w) var(--art-h) no-repeat;
+  transform-origin: center; text-decoration: none;
+}
+.feature-brand { z-index: 2; }
+.feature-tile:focus-visible { outline: 3px solid #4169f5; outline-offset: 3px; }
+.feature-constellation.is-animated .feature-tile:not(.feature-brand) {
+  opacity: 0; visibility: hidden; will-change: transform, opacity;
+}
+.feature-constellation.is-animated .feature-tile.is-visible { visibility: visible; }
+.feature-scroll-cue {
+  position: absolute; bottom: 58px; left: 0; width: 100%;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  color: #536074; font-size: 13px; letter-spacing: .02em; pointer-events: none;
+}
+.feature-cue-arrow { font-size: 19px; }
+.feature-art-note {
+  position: absolute; bottom: 20px; left: 16px; right: 16px;
+  margin: 0; text-align: center; font-size: 11px; color: #788393;
+}
+.feature-skip {
+  position: absolute; left: 50%; bottom: 58px; transform: translateX(-50%);
+  padding: 8px 16px; background: #142138; border: 0; border-radius: 999px;
+  color: #fff; font: 500 13px var(--font);
+  opacity: 0; pointer-events: none;
+}
+.feature-skip:focus-visible { opacity: 1; pointer-events: auto; }
+/* Without JavaScript, or with reduced motion, no long empty scroll segment. */
+.feature-constellation:not(.is-animated) { height: auto; }
+.feature-constellation:not(.is-animated) .feature-pin { position: relative; }
+.feature-constellation:not(.is-animated) .feature-scroll-cue,
+.feature-constellation:not(.is-animated) .feature-skip { display: none; }
+/* A readable two-column gallery on phones, rather than shrinking eleven labels. */
+@media (max-width: 640px) {
+  .feature-constellation { margin-top: 64px; height: auto; scroll-margin-top: 100px; }
+  .feature-pin { height: auto; min-height: 0; position: relative; display: block; padding: 32px 12px 48px; }
+  .feature-board { width: 100%; aspect-ratio: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .feature-tile { position: relative; left: auto; top: auto; width: 100%; height: auto; aspect-ratio: var(--tile-ratio); border-radius: 12px; }
+  .feature-brand { order: -1; grid-column: 1 / -1; }
+  .feature-tile[data-feature="bimanual"], .feature-tile[data-feature="gpu"] { grid-column: 1 / -1; }
+  .feature-scroll-cue, .feature-skip { display: none; }
+  .feature-art-note { bottom: 14px; font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .feature-constellation { height: auto !important; }
+  .feature-pin { position: relative; }
+  .feature-tile { transform: none !important; opacity: 1 !important; visibility: visible !important; }
+  .feature-scroll-cue, .feature-skip { display: none; }
+}
