@@ -5,7 +5,7 @@
 }
 .feature-constellation {
   position: relative; height: 310svh; margin-top: 100px;
-  color: var(--text); scroll-margin-top: 0; overflow: hidden;
+  color: var(--text); scroll-margin-top: 0;
   background:
     radial-gradient(55vw 45vw at 76% 12%, rgba(139, 92, 246, .16), transparent 65%),
     radial-gradient(45vw 45vw at 12% 86%, rgba(34, 211, 238, .12), transparent 68%),
